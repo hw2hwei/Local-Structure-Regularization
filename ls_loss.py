@@ -6,6 +6,8 @@ import torch.nn.functional as F
 
 
 class _LocalStructureLossBase(nn.Module):
+    """Base loss that expects raw logits and applies softmax internally."""
+
     def __init__(
         self,
         num_classes,

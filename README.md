@@ -26,6 +26,8 @@ Install PyTorch for your platform using the [official instructions](https://pyto
 
 `logits` must have shape `[B, C, H, W]`; integer `target` must have shape `[B, H, W]` and contain class IDs in `[0, C)`, apart from `ignore_index`.
 
+**Important:** pass raw, unnormalized model logits. Do not apply softmax before calling the loss; softmax is applied internally.
+
 The internal LSO and LSM weights default to `1.0:1.0`, matching the training configuration. Use an outer `lambda_ls` weight of `0.1` to `1.0` as a starting range; the example default is `0.3`. This outer coefficient scales the complete LS term and may vary by dataset or experiment.
 
 ```python
