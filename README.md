@@ -4,7 +4,7 @@ This repository provides a plug-and-play PyTorch loss for semantic segmentation.
 
 ## Method Figure
 
- [![Local Structure Regularization method](figures/method_ls.png)](figures/method_ls.pdf)
+[![Local Structure Regularization method](figures/method_ls.png)](figures/method_ls.pdf)
 
 The PNG is an inline preview; click it to open the original [PDF figure](figures/method_ls.pdf).
 
@@ -26,7 +26,7 @@ Install PyTorch for your platform using the [official instructions](https://pyto
 
 `logits` must have shape `[B, C, H, W]`; integer `target` must have shape `[B, H, W]` and contain class IDs in `[0, C)`, apart from `ignore_index`.
 
-Use an outer `lambda_ls` weight of `0.1` to `1.0` as a starting range; the example default is `0.3`. This coefficient scales the complete LS term and is separate from the internal LSO/LSM balancing parameters.
+The internal LSO and LSM weights default to `1.0:1.0`, matching the training configuration. Use an outer `lambda_ls` weight of `0.1` to `1.0` as a starting range; the example default is `0.3`. This outer coefficient scales the complete LS term and may vary by dataset or experiment.
 
 ```python
 import torch
