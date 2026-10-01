@@ -196,7 +196,7 @@ class LocalStructureRegularizationLoss(_LocalStructureLossBase):
         self,
         *args,
         lambda_orientation=1.0,
-        lambda_magnitude=0.5,
+        lambda_magnitude=1.0,
         mag_loss_type="l1",
         **kwargs,
     ):
